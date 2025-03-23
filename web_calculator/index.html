@@ -4,101 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Online Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
+            font-family: 'Poppins', sans-serif;
             background-color: #f0f4f8;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
-            font-family: Arial, sans-serif;
         }
-
-        .calculator {
+        .calculator-container {
             background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            width: 350px;
-            padding: 20px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            max-width: 400px;
+            width: 100%;
             text-align: center;
         }
-
-        .display {
-            width: 100%;
-            height: 60px;
+        h2 {
             margin-bottom: 15px;
-            font-size: 24px;
-            text-align: right;
+            color: #333;
+        }
+        input, select, textarea {
+            width: 100%;
             padding: 10px;
-            border: 2px solid #ccc;
-            border-radius: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
             box-sizing: border-box;
-            outline: none;
         }
-
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-        }
-
-        button {
-            padding: 15px;
-            font-size: 18px;
-            border-radius: 10px;
-            border: none;
-            background-color: #007bff;
-            color: #fff;
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
             cursor: pointer;
-            transition: background-color 0.3s;
+            font-weight: 500;
         }
-
-        button:hover {
-            background-color: #0056b3;
+        input[type="submit"]:hover {
+            background-color: #45a049;
         }
-
-        .operator {
-            background-color: #f4b400;
-        }
-
-        .operator:hover {
-            background-color: #c69500;
-        }
-
-        .equal {
-            background-color: #28a745;
-            grid-column: span 2;
-        }
-
-        .equal:hover {
-            background-color: #218838;
-        }
-
     </style>
 </head>
 <body>
-    <div class="calculator">
-        <h2>Professional Calculator</h2>
-        <input type="text" class="display" disabled />
-        <div class="buttons">
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button class="operator">/</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button class="operator">*</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button class="operator">-</button>
-            <button>0</button>
-            <button class="operator">C</button>
-            <button class="equal">=</button>
-            <button class="operator">+</button>
-        </div>
+    <div class="calculator-container">
+        <h2>Professional Online Calculator</h2>
+        <form>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="place">Place:</label>
+            <input type="text" id="place" name="place" required>
+
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="3" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
     </div>
 </body>
 </html>
